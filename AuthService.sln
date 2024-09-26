@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService", "AuthService\AuthService.csproj", "{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{68B93A83-71DE-413F-A025-14DE3254D36C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B93A83-71DE-413F-A025-14DE3254D36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B93A83-71DE-413F-A025-14DE3254D36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B93A83-71DE-413F-A025-14DE3254D36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B93A83-71DE-413F-A025-14DE3254D36C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DD1A331-03BC-4B25-BE6F-C900B32585BF}
+	EndGlobalSection
+EndGlobal

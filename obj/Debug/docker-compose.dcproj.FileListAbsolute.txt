@@ -1,0 +1,2 @@
+C:\Users\PC\source\repos\AuthService\bin\Debug\AuthService.dll
+C:\Users\PC\source\repos\AuthService\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

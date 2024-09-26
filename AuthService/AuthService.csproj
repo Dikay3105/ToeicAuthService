@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>18b1dffe-789d-4acb-8142-44a1d3277724</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net8.0\AuthService.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\AuthService.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\AuthService.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\AuthService.csproj.nuget.g.props" />
+    <None Include="obj\AuthService.csproj.nuget.g.targets" />
+    <None Include="obj\Container\AbsoluteOutputAssemblyPath.cache" />
+    <None Include="obj\Container\AdditionalProbingPaths.cache" />
+    <None Include="obj\Container\ContainerDevelopmentMode.cache" />
+    <None Include="obj\Container\ContainerId.cache" />
+    <None Include="obj\Container\ContainerName.cache" />
+    <None Include="obj\Container\ContainerOperatingSystemFlavor.cache" />
+    <None Include="obj\Container\ContainerRunContext.cache" />
+    <None Include="obj\Container\DebuggeeArguments.cache" />
+    <None Include="obj\Container\DebuggeeKillProcessCommand.cache" />
+    <None Include="obj\Container\DebuggeeProgram.cache" />
+    <None Include="obj\Container\DebuggeeWorkingDirectory.cache" />
+    <None Include="obj\Container\DistrolessHelperSupported.cache" />
+    <None Include="obj\Container\FastModeProjectMountDirectory.cache" />
+    <None Include="obj\Container\ImageBuildContext.cache" />
+    <None Include="obj\Container\ImageId.cache" />
+    <None Include="obj\Container\LaunchedImageId.cache" />
+    <None Include="obj\Container\OperatingSystemName.cache" />
+    <None Include="obj\Container\TargetFramework.cache" />
+    <None Include="obj\Container\VolumeMappings.cache" />
+    <None Include="obj\Container\VolumeMappings2.cache" />
+    <None Include="obj\Container\VsDbgScript.cache" />
+    <None Include="obj\Debug\net8.0\AuthService.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\AuthService.assets.cache" />
+    <None Include="obj\Debug\net8.0\AuthService.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net8.0\AuthService.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\ToeicWeb.Server.csproj.EntityFrameworkCore.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\Debug\net8.0\refint\" />
+    <Folder Include="obj\Debug\net8.0\ref\" />
+    <Folder Include="obj\Debug\net8.0\staticwebassets\" />
+  </ItemGroup>
+
+</Project>
