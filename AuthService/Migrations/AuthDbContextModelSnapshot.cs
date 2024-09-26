@@ -22,6 +22,22 @@ namespace AuthService.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("AuthService.Models.EmailConfirm", b =>
+                {
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("ExpiredAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.ToTable("EmailConfirms");
+                });
+
             modelBuilder.Entity("AuthService.Models.Permission", b =>
                 {
                     b.Property<int>("PermissionID")
@@ -101,22 +117,22 @@ namespace AuthService.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8f008cd9-b08d-4ee9-8fa9-617bfb5a9bc1"),
-                            ExpiredAt = new DateTime(2024, 10, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3237),
+                            Id = new Guid("eba39714-c2f4-4ccd-a0c0-6b187233cd12"),
+                            ExpiredAt = new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5714),
                             IsRevoked = false,
                             IsUsed = false,
-                            IssuedAt = new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3243),
+                            IssuedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5724),
                             JwtId = "test",
                             Token = "refresh_token_1",
                             UserId = 1
                         },
                         new
                         {
-                            Id = new Guid("6da2a618-f6aa-41cd-a47a-fa87b1db09ef"),
-                            ExpiredAt = new DateTime(2024, 10, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3294),
+                            Id = new Guid("2bbfe5e3-9376-46ff-9bd3-dd2efe12e043"),
+                            ExpiredAt = new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5730),
                             IsRevoked = false,
                             IsUsed = false,
-                            IssuedAt = new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3295),
+                            IssuedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5731),
                             JwtId = "test",
                             Token = "refresh_token_2",
                             UserId = 2
@@ -250,7 +266,7 @@ namespace AuthService.Migrations
                         new
                         {
                             UserID = 1,
-                            CreatedAt = new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3044),
+                            CreatedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5040),
                             Email = "admin@example.com",
                             FirstName = "Admin",
                             LastName = "User",
@@ -261,7 +277,7 @@ namespace AuthService.Migrations
                         new
                         {
                             UserID = 2,
-                            CreatedAt = new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3056),
+                            CreatedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5067),
                             Email = "john.doe@example.com",
                             FirstName = "John",
                             LastName = "Doe",
@@ -272,7 +288,7 @@ namespace AuthService.Migrations
                         new
                         {
                             UserID = 3,
-                            CreatedAt = new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3058),
+                            CreatedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5069),
                             Email = "jane.smith@example.com",
                             FirstName = "Jane",
                             LastName = "Smith",

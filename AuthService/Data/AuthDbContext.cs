@@ -16,7 +16,7 @@ namespace AuthService.Data
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
-
+        public DbSet<EmailConfirm> EmailConfirms { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasKey(u => u.UserID);
@@ -50,6 +50,9 @@ namespace AuthService.Data
                 .HasOne<User>()
                 .WithMany()
                 .HasForeignKey(rt => rt.UserId);
+
+            modelBuilder.Entity<EmailConfirm>()
+                .HasNoKey();
 
             // Seed data for Users
             modelBuilder.Entity<User>().HasData(

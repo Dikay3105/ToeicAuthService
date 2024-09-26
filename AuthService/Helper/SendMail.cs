@@ -45,8 +45,8 @@ namespace AuthService.Helper
         // Phương thức riêng để gửi email (bất đồng bộ)
         private static async Task SendEmailAsync(string toEmail, string subject, string body)
         {
-            string fromEmail = "huhuhuhuvbd@gmail.com"; // Địa chỉ email của bạn
-            string emailPassword = "khoa3105"; // Mật khẩu email của bạn
+            string fromEmail = "hahahahavbd@gmail.com"; // Địa chỉ email của bạn
+            string emailPassword = "dqqh ajpa ulwl bpam"; // Mật khẩu email của bạn
 
             using (MailMessage mail = new MailMessage())
             {

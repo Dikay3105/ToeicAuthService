@@ -9,12 +9,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AuthService.Migrations
 {
     /// <inheritdoc />
-    public partial class initDB : Migration
+    public partial class dbInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "EmailConfirms",
+                columns: table => new
+                {
+                    Email = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Code = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ExpiredAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
@@ -182,9 +197,9 @@ namespace AuthService.Migrations
                 columns: new[] { "UserID", "CreatedAt", "Email", "FirstName", "LastName", "PasswordHash", "Salt", "Username" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3044), "admin@example.com", "Admin", "User", "hashed_password_1", "salt1", "admin" },
-                    { 2, new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3056), "john.doe@example.com", "John", "Doe", "hashed_password_2", "salt2", "john_doe" },
-                    { 3, new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3058), "jane.smith@example.com", "Jane", "Smith", "hashed_password_3", "salt3", "jane_smith" }
+                    { 1, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5040), "admin@example.com", "Admin", "User", "hashed_password_1", "salt1", "admin" },
+                    { 2, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5067), "john.doe@example.com", "John", "Doe", "hashed_password_2", "salt2", "john_doe" },
+                    { 3, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5069), "jane.smith@example.com", "Jane", "Smith", "hashed_password_3", "salt3", "jane_smith" }
                 });
 
             migrationBuilder.InsertData(
@@ -192,8 +207,8 @@ namespace AuthService.Migrations
                 columns: new[] { "Id", "ExpiredAt", "IsRevoked", "IsUsed", "IssuedAt", "JwtId", "Token", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("6da2a618-f6aa-41cd-a47a-fa87b1db09ef"), new DateTime(2024, 10, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3294), false, false, new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3295), "test", "refresh_token_2", 2 },
-                    { new Guid("8f008cd9-b08d-4ee9-8fa9-617bfb5a9bc1"), new DateTime(2024, 10, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3237), false, false, new DateTime(2024, 9, 25, 22, 22, 36, 993, DateTimeKind.Local).AddTicks(3243), "test", "refresh_token_1", 1 }
+                    { new Guid("2bbfe5e3-9376-46ff-9bd3-dd2efe12e043"), new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5730), false, false, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5731), "test", "refresh_token_2", 2 },
+                    { new Guid("eba39714-c2f4-4ccd-a0c0-6b187233cd12"), new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5714), false, false, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5724), "test", "refresh_token_1", 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -246,6 +261,9 @@ namespace AuthService.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "EmailConfirms");
+
             migrationBuilder.DropTable(
                 name: "RefreshTokens");
 

@@ -20,6 +20,7 @@ namespace AuthService.Controllers
         private readonly IAccountRepository _accountRepository;
         private readonly IUserRepository _userRepository;
         private readonly IRefreshTokenRepository _refreshTokenRepository;
+        private readonly IEmailConfirmRepository _emailConfirmRepository;
         private readonly IMapper _mapper;
         private readonly AppSettings _appSettings;
 
@@ -27,12 +28,14 @@ namespace AuthService.Controllers
             IAccountRepository accountRepository,
             IUserRepository userRepository,
             IRefreshTokenRepository refreshTokenRepository,
+            IEmailConfirmRepository emailConfirmRepository,
             IMapper mapper,
             IOptions<AppSettings> options)
         {
             _accountRepository = accountRepository;
             _userRepository = userRepository;
             _refreshTokenRepository = refreshTokenRepository;
+            _emailConfirmRepository = emailConfirmRepository;
             _mapper = mapper;
             _appSettings = options.Value;
         }
@@ -76,12 +79,6 @@ namespace AuthService.Controllers
         [HttpPost("SignUp")]
         public async Task<IActionResult> SignUp([FromBody] SignUpModel model)
         {
-            var existingUser = await _accountRepository.GetUserByUsernameAsync(model.Username);
-            if (existingUser != null)
-            {
-                return BadRequest(new { EC = 1, EM = "Username already exists" });
-            }
-
             var (passwordHash, salt) = PasswordHasher.HashPassword(model.PasswordHash);
 
             var newUser = new User
@@ -94,6 +91,12 @@ namespace AuthService.Controllers
                 LastName = model.LastName,
                 CreatedAt = DateTime.UtcNow
             };
+
+            var checkValidMail = ValidateCheck.IsValidEmail(newUser.Email);
+            if (!checkValidMail)
+            {
+                return StatusCode(422, new { EC = -1, EM = "Invalid email" });
+            }
 
             var checkUsername = _userRepository.GetUsers()
                 .FirstOrDefault(u => u.Username.Trim().ToUpper() == newUser.Username.Trim().ToUpper());
@@ -241,12 +244,11 @@ namespace AuthService.Controllers
         [HttpPost("SendConfirmEmailCode")]
         public async Task<IActionResult> SendConfirmEmailCode([FromBody] EmailModel model)
         {
-            var confirmationCode = RNG.GenerateSixDigitNumber().ToString();
-
             try
             {
-                await SendMail.SendVerificationEmailAsync(model.Email, confirmationCode);
-                return Ok(new { EC = 0, EM = "Confirmation code sent successfully" });
+                if (await _emailConfirmRepository.SendEmailConfirmationCodeAsync(model.Email))
+                    return Ok(new { EC = 0, EM = "Confirmation code sent successfully" });
+                return Ok(new { EC = -1, EM = "Cannot sent code" });
             }
             catch (Exception ex)
             {

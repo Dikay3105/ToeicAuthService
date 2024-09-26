@@ -1,37 +1,61 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\AuthService\\",
+  "WorkspaceRootPath": "C:\\Users\\huhuh\\source\\repos\\AuthService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\repository\\emailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\repository\\emailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\authservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\authservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\repository\\emailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\repository\\emailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\helper\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\helper\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\helper\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\helper\\mailtemplate\\confirmemailmail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\interfaces\\iemailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\interfaces\\iemailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\data\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\data\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\helper\\validatecheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\helper\\validatecheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\helper\\mailtemplate\\confirmemailmail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\helper\\mailtemplate\\confirmemailmail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\helper\\mailtemplate\\resetpasswordmail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\helper\\mailtemplate\\resetpasswordmail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\helper\\mailtemplate\\resetpasswordmail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -42,90 +66,175 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthService",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\AuthService.csproj",
-              "RelativeDocumentMoniker": "AuthService\\AuthService.csproj",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\AuthService.csproj",
-              "RelativeToolTip": "AuthService\\AuthService.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-26T04:28:05.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "AuthService\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Controllers\\UserController.cs",
-              "RelativeToolTip": "AuthService\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T04:26:06.968Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Program.cs",
-              "RelativeDocumentMoniker": "AuthService\\Program.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Program.cs",
-              "RelativeToolTip": "AuthService\\Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAAEAAAAAyAAAAAAAAAA==",
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Repository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "AuthService\\Repository\\UserRepository.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowD8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T04:20:52.684Z"
+              "WhenOpened": "2024-09-26T07:48:39.642Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "AuthService\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\UserController.cs",
+              "RelativeToolTip": "AuthService\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T04:26:06.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "EmailConfirmRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Repository\\EmailConfirmRepository.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\EmailConfirmRepository.cs",
               "RelativeDocumentMoniker": "AuthService\\Repository\\EmailConfirmRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Repository\\EmailConfirmRepository.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\EmailConfirmRepository.cs",
               "RelativeToolTip": "AuthService\\Repository\\EmailConfirmRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T04:04:58.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "IEmailConfirmRepository.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "RelativeToolTip": "AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T07:26:27.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "AuthService\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\AccountController.cs",
               "RelativeToolTip": "AuthService\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAALkAAAAAAAAAAAAAALIAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAAAPoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T04:00:54.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "SendMail.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Helper\\SendMail.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\SendMail.cs",
               "RelativeDocumentMoniker": "AuthService\\Helper\\SendMail.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Helper\\SendMail.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\SendMail.cs",
               "RelativeToolTip": "AuthService\\Helper\\SendMail.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAswA8AAABHAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T03:59:54.842Z"
+              "WhenOpened": "2024-09-26T03:59:54.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "AuthDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Data\\AuthDbContext.cs",
+              "RelativeDocumentMoniker": "AuthService\\Data\\AuthDbContext.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Data\\AuthDbContext.cs",
+              "RelativeToolTip": "AuthService\\Data\\AuthDbContext.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwDUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T06:45:11.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\appsettings.json",
+              "RelativeDocumentMoniker": "AuthService\\appsettings.json",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\appsettings.json",
+              "RelativeToolTip": "AuthService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-26T07:17:44.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Program.cs",
+              "RelativeDocumentMoniker": "AuthService\\Program.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Program.cs",
+              "RelativeToolTip": "AuthService\\Program.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAEAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T04:20:52.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ValidateCheck.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\ValidateCheck.cs",
+              "RelativeDocumentMoniker": "AuthService\\Helper\\ValidateCheck.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\ValidateCheck.cs",
+              "RelativeToolTip": "AuthService\\Helper\\ValidateCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T06:51:37.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Repository\\AccountRepository.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\AccountRepository.cs",
+              "RelativeToolTip": "AuthService\\Repository\\AccountRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T06:54:22.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Models\\User.cs",
+              "RelativeDocumentMoniker": "AuthService\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Models\\User.cs",
+              "RelativeToolTip": "AuthService\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T06:40:28.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "ConfirmEmailMail.html",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ConfirmEmailMail.html",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ConfirmEmailMail.html",
               "RelativeDocumentMoniker": "AuthService\\Helper\\MailTemplate\\ConfirmEmailMail.html",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ConfirmEmailMail.html",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ConfirmEmailMail.html",
               "RelativeToolTip": "AuthService\\Helper\\MailTemplate\\ConfirmEmailMail.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
@@ -133,11 +242,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "ResetPasswordMail.html",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ResetPasswordMail.html",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ResetPasswordMail.html",
               "RelativeDocumentMoniker": "AuthService\\Helper\\MailTemplate\\ResetPasswordMail.html",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ResetPasswordMail.html",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Helper\\MailTemplate\\ResetPasswordMail.html",
               "RelativeToolTip": "AuthService\\Helper\\MailTemplate\\ResetPasswordMail.html",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
