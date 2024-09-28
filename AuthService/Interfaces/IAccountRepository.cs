@@ -9,5 +9,8 @@ namespace AuthService.Interfaces
         Task<RefreshToken> GetRefreshTokenAsync(string token);
         Task UpdateRefreshTokenAsync(RefreshToken refreshToken);
         Task<User> GetUserByIdAsync(int userId);
+
+        // Phương thức cập nhật mật khẩu mới
+        Task UpdatePasswordAsync(int userId, string newPasswordHash);
     }
 }

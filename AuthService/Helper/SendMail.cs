@@ -21,23 +21,16 @@ namespace AuthService.Helper
         }
 
         // Phương thức gửi email đặt lại mật khẩu (bất đồng bộ)
-        public static async Task SendPasswordResetEmailAsync(string toEmail, string resetLink)
+        public static async Task SendPasswordResetEmailAsync(string toEmail, string ResetPasswordCode)
         {
-            string fromEmail = "your_email@example.com"; // Địa chỉ email của bạn
-            string emailPassword = "your_email_password"; // Mật khẩu email của bạn
             string subject = "Đặt lại mật khẩu";
 
-            // Tạo nội dung email cho đặt lại mật khẩu
-            string body = $@"
-            <html>
-                <body>
-                    <h2>Yêu cầu đặt lại mật khẩu</h2>
-                    <p>Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn. Vui lòng nhấp vào liên kết bên dưới để đặt lại mật khẩu của bạn:</p>
-                    <a href='{resetLink}'>Đặt lại mật khẩu</a>
-                    <p>Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này.</p>
-                    <p>Trân trọng,<br>Đội ngũ hỗ trợ</p>
-                </body>
-            </html>";
+            // Tạo nội dung email cho reset password
+            string templatePath = "./Helper/MailTemplate/ResetPasswordMail.html"; // Đường dẫn tới file HTML
+            string body = await File.ReadAllTextAsync(templatePath);
+
+            // Thay thế placeholder trong HTML bằng mã xác thực
+            body = body.Replace("{ResetPasswordCode}", ResetPasswordCode);
 
             await SendEmailAsync(toEmail, subject, body);
         }

@@ -3241,23 +3241,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huhuh\\.nuget\\packages\\": {},
+    "C:\\Users\\PC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\AuthService.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\AuthService.csproj",
       "projectName": "AuthService",
-      "projectPath": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\AuthService.csproj",
-      "packagesPath": "C:\\Users\\huhuh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\obj\\",
+      "projectPath": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\AuthService.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\huhuh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

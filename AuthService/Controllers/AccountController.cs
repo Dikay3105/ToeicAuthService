@@ -21,6 +21,7 @@ namespace AuthService.Controllers
         private readonly IUserRepository _userRepository;
         private readonly IRefreshTokenRepository _refreshTokenRepository;
         private readonly IEmailConfirmRepository _emailConfirmRepository;
+        private readonly IResetPasswordRepository _resetPasswordRepository;
         private readonly IMapper _mapper;
         private readonly AppSettings _appSettings;
 
@@ -29,6 +30,7 @@ namespace AuthService.Controllers
             IUserRepository userRepository,
             IRefreshTokenRepository refreshTokenRepository,
             IEmailConfirmRepository emailConfirmRepository,
+            IResetPasswordRepository resetPasswordRepository,
             IMapper mapper,
             IOptions<AppSettings> options)
         {
@@ -36,6 +38,7 @@ namespace AuthService.Controllers
             _userRepository = userRepository;
             _refreshTokenRepository = refreshTokenRepository;
             _emailConfirmRepository = emailConfirmRepository;
+            _resetPasswordRepository = resetPasswordRepository;
             _mapper = mapper;
             _appSettings = options.Value;
         }
@@ -89,7 +92,8 @@ namespace AuthService.Controllers
                 Email = model.Email,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
+                lastPasswordChange = ""
             };
 
             var checkValidMail = ValidateCheck.IsValidEmail(newUser.Email);
@@ -127,6 +131,45 @@ namespace AuthService.Controllers
             var token = await GenerateToken(newUser);
             return Ok(new { EC = 0, EM = "Sign up successful", DT = token });
         }
+
+        // API đổi mật khẩu
+        [HttpPost("ChangePassword")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
+        {
+            var user = await _accountRepository.GetUserByUsernameAsync(model.Username);
+            if (user == null)
+            {
+                return BadRequest(new { EC = -1, EM = "Người dùng không tồn tại" });
+            }
+
+            // Xác minh mật khẩu hiện tại
+            if (!PasswordHasher.VerifyPassword(model.OldPassword, user.PasswordHash, user.Salt))
+            {
+                return BadRequest(new { EC = -1, EM = "Mật khẩu hiện tại không đúng" });
+            }
+
+            //Xác minh mật khẩu mới với mật khẩu cũ đã dùng trước đó
+            if (PasswordHasher.VerifyPassword(model.NewPassword, user.lastPasswordChange, user.Salt))
+            {
+                return BadRequest(new { EC = -1, EM = "Mật khẩu này đã được dùng trước đó, bạn không nên sử dụng lại" });
+            }
+
+            try
+            {
+                // Cập nhật mật khẩu mới
+                await _accountRepository.UpdatePasswordAsync(user.UserID, PasswordHasher.HashPasswordWithSalt(model.NewPassword, user.Salt));
+
+                // Nếu cập nhật thành công
+                return Ok(new { EC = 0, EM = "Đổi mật khẩu thành công" });
+            }
+            catch (Exception ex)
+            {
+                // Nếu có lỗi xảy ra trong quá trình cập nhật
+                return StatusCode(500, new { EC = -1, EM = "Lỗi cập nhật mật khẩu", Details = ex.Message });
+            }
+        }
+
+
 
         private async Task<TokenModel> GenerateToken(User user)
         {
@@ -255,9 +298,128 @@ namespace AuthService.Controllers
                 return StatusCode(500, new { EC = -1, EM = "Failed to send email", Details = ex.Message });
             }
         }
+
+        [HttpPost("CheckConfirmEmailCode")]
+        public async Task<IActionResult> CheckConfirmEmailCode([FromBody] CheckEmailCodeModel model)
+        {
+            try
+            {
+                // Check if the confirmation code for the given email is correct
+                var confirmation = await _emailConfirmRepository.GetConfirmationAsync(model.Email, model.ConfirmationCode);
+
+                if (confirmation != null && !confirmation.IsUsed && confirmation.ExpiredAt > DateTime.UtcNow)
+                {
+                    // Mark the confirmation code as used
+                    confirmation.IsUsed = true;
+                    await _emailConfirmRepository.UpdateConfirmationAsync(confirmation);
+
+                    return Ok(new { EC = 0, EM = "Confirmation code is valid" });
+                }
+                else
+                {
+                    return Ok(new { EC = -1, EM = "Invalid or expired confirmation code" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { EC = -1, EM = "Error validating confirmation code", DT = ex.Message });
+            }
+        }
+
+        // API gửi mã xác nhận đổi mật khẩu tới email
+        [HttpPost("SendResetCode")]
+        public async Task<IActionResult> SendResetToken([FromBody] string email)
+        {
+            var user = await _userRepository.GetUserByEmailAsync(email);
+            if (user == null)
+            {
+                return BadRequest(new { EC = -1, EM = "Email không tồn tại" });
+            }
+
+            // Tạo mã xác nhận mới
+            var resetToken = new ResetPassword
+            {
+                UserId = user.UserID,
+                Token = RNG.GenerateSixDigitNumber().ToString(),
+                ExpirationDate = DateTime.UtcNow.AddMinutes(1), // Mã hết hạn sau 1 phút
+                CreatedAt = DateTime.UtcNow,
+                Used = false
+            };
+
+            await _resetPasswordRepository.SaveResetTokenAsync(resetToken);
+
+            // Gửi email (Giả sử `SendEmailAsync` là phương thức gửi email)
+            await SendMail.SendPasswordResetEmailAsync(email, resetToken.Token);
+
+            return Ok(new { EC = 0, EM = "Mã xác nhận đã được gửi qua email" });
+        }
+
+        //API kiểm tra mã xác nhận
+        [HttpPost("VerifyResetCode")]
+        public async Task<IActionResult> VerifyResetToken([FromBody] VerifyResetTokenModel model)
+        {
+            var token = await _resetPasswordRepository.GetResetTokenAsync(model.Email, model.Token);
+
+            if (token == null)
+            {
+                return BadRequest(new { EC = -1, EM = "Mã xác nhận không hợp lệ hoặc đã hết hạn" });
+            }
+
+            return Ok(new { EC = 0, EM = "Mã xác nhận hợp lệ", TokenId = token.Id });
+        }
+
+        //API cập nhật mật khẩu mới
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordModel model)
+        {
+            var token = await _resetPasswordRepository.GetResetTokenAsync(model.Email, model.Token);
+            var user = await _userRepository.GetUserByEmailAsync(model.Email);
+
+            if (token == null || token.Used || token.ExpirationDate <= DateTime.UtcNow)
+            {
+                return BadRequest(new { EC = -1, EM = "Mã xác nhận không hợp lệ hoặc đã hết hạn" });
+            }
+
+            // Cập nhật mật khẩu mới (giả sử mật khẩu đã được hash trước khi gọi API)
+            await _accountRepository.UpdatePasswordAsync(token.UserId, PasswordHasher.HashPasswordWithSalt(model.NewPassword, user.Salt));
+
+            // Đánh dấu mã xác nhận là đã sử dụng
+            await _resetPasswordRepository.MarkTokenAsUsedAsync(token.Id);
+
+            return Ok(new { EC = 0, EM = "Mật khẩu đã được cập nhật thành công" });
+        }
+
+
     }
     public class EmailModel
     {
         public string Email { get; set; }
     }
+
+    public class CheckEmailCodeModel
+    {
+        public string Email { get; set; }
+        public string ConfirmationCode { get; set; }
+    }
+
+    public class VerifyResetTokenModel
+    {
+        public string Email { get; set; }
+        public string Token { get; set; }
+    }
+
+    public class ResetPasswordModel
+    {
+        public string Email { get; set; }
+        public string Token { get; set; }
+        public string NewPassword { get; set; } // Mật khẩu đã được hash
+    }
+
+    public class ChangePasswordModel
+    {
+        public string Username { get; set; }
+        public string OldPassword { get; set; }
+        public string NewPassword { get; set; } // Mật khẩu mới (đã hash)
+    }
+
 }

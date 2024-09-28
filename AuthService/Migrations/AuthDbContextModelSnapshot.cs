@@ -24,9 +24,18 @@ namespace AuthService.Migrations
 
             modelBuilder.Entity("AuthService.Models.EmailConfirm", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -34,6 +43,11 @@ namespace AuthService.Migrations
 
                     b.Property<DateTime>("ExpiredAt")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("EmailConfirms");
                 });
@@ -117,26 +131,58 @@ namespace AuthService.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("eba39714-c2f4-4ccd-a0c0-6b187233cd12"),
-                            ExpiredAt = new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5714),
+                            Id = new Guid("c9c235f6-693d-44be-a7b6-9ab238ef5c6a"),
+                            ExpiredAt = new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1661),
                             IsRevoked = false,
                             IsUsed = false,
-                            IssuedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5724),
+                            IssuedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1667),
                             JwtId = "test",
                             Token = "refresh_token_1",
                             UserId = 1
                         },
                         new
                         {
-                            Id = new Guid("2bbfe5e3-9376-46ff-9bd3-dd2efe12e043"),
-                            ExpiredAt = new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5730),
+                            Id = new Guid("fe0a6332-9d14-428a-98b6-49db7b0aae7b"),
+                            ExpiredAt = new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1670),
                             IsRevoked = false,
                             IsUsed = false,
-                            IssuedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5731),
+                            IssuedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1671),
                             JwtId = "test",
                             Token = "refresh_token_2",
                             UserId = 2
                         });
+                });
+
+            modelBuilder.Entity("AuthService.Models.ResetPassword", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("Used")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ResetPasswords");
                 });
 
             modelBuilder.Entity("AuthService.Models.Role", b =>
@@ -258,6 +304,10 @@ namespace AuthService.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("lastPasswordChange")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("UserID");
 
                     b.ToTable("Users");
@@ -266,35 +316,38 @@ namespace AuthService.Migrations
                         new
                         {
                             UserID = 1,
-                            CreatedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5040),
+                            CreatedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1451),
                             Email = "admin@example.com",
                             FirstName = "Admin",
                             LastName = "User",
                             PasswordHash = "hashed_password_1",
                             Salt = "salt1",
-                            Username = "admin"
+                            Username = "admin",
+                            lastPasswordChange = "none"
                         },
                         new
                         {
                             UserID = 2,
-                            CreatedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5067),
+                            CreatedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1464),
                             Email = "john.doe@example.com",
                             FirstName = "John",
                             LastName = "Doe",
                             PasswordHash = "hashed_password_2",
                             Salt = "salt2",
-                            Username = "john_doe"
+                            Username = "john_doe",
+                            lastPasswordChange = "none"
                         },
                         new
                         {
                             UserID = 3,
-                            CreatedAt = new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5069),
+                            CreatedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1466),
                             Email = "jane.smith@example.com",
                             FirstName = "Jane",
                             LastName = "Smith",
                             PasswordHash = "hashed_password_3",
                             Salt = "salt3",
-                            Username = "jane_smith"
+                            Username = "jane_smith",
+                            lastPasswordChange = "none"
                         });
                 });
 
@@ -348,6 +401,17 @@ namespace AuthService.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("AuthService.Models.ResetPassword", b =>
+                {
+                    b.HasOne("AuthService.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("AuthService.Models.RolePermission", b =>

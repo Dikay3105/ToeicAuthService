@@ -45,6 +45,18 @@ namespace AuthService.Repositories
             return await _context.Users.SingleOrDefaultAsync(x => x.UserID == userId);
         }
 
+        // Cập nhật mật khẩu mới cho người dùng
+        public async Task UpdatePasswordAsync(int userId, string newPasswordHash)
+        {
+            var user = await _context.Users.FindAsync(userId);
+            if (user != null)
+            {
+
+                user.lastPasswordChange = user.PasswordHash;
+                user.PasswordHash = newPasswordHash; // Cập nhật password đã hash
+                await _context.SaveChangesAsync();
+            }
+        }
 
     }
 }

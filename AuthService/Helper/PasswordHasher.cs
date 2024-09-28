@@ -19,6 +19,18 @@ namespace AuthService.Helpers
             }
         }
 
+        // Hashes the password with a given salt
+        public static string HashPasswordWithSalt(string password, string salt)
+        {
+            using (var hmac = new HMACSHA512(Convert.FromBase64String(salt)))
+            {
+                var passwordBytes = Encoding.UTF8.GetBytes(password); // Kết hợp mật khẩu với salt đã được cung cấp
+                var hashBytes = hmac.ComputeHash(passwordBytes);
+                var passwordHash = Convert.ToBase64String(hashBytes);
+
+                return passwordHash;
+            }
+        }
 
         // Verifies the password
         public static bool VerifyPassword(string password, string storedHash, string storedSalt)

@@ -2,6 +2,7 @@
 using AuthService.Helper;
 using AuthService.Interfaces;
 using AuthService.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AuthService.Repository
 {
@@ -32,7 +33,10 @@ namespace AuthService.Repository
             var emailConfirm = new EmailConfirm
             {
                 Email = email,
-                Code = confirmationCode
+                Code = confirmationCode,
+                ExpiredAt = DateTime.UtcNow.AddMinutes(1),
+                CreatedAt = DateTime.UtcNow,
+                IsUsed = false
             };
 
             await _context.EmailConfirms.AddAsync(emailConfirm);
@@ -40,25 +44,28 @@ namespace AuthService.Repository
             return saved > 0 ? true : false;
         }
 
-        public async Task<bool> ConfirmEmailCodeAsync(string email, string confirmationCode)
+        public async Task<bool> ValidateConfirmationCodeAsync(string email, string confirmationCode)
         {
-            //// Tìm người dùng theo email
-            //var user = await _userRepository.GetUserByEmailAsync(email);
-            //if (user == null)
-            //{
-            //    return false;
-            //}
-
-            //// Kiểm tra mã xác nhận
-            //if (user.ConfirmationCode == confirmationCode)
-            //{
-            //    user.IsEmailConfirmed = true;
-            //    user.ConfirmationCode = null; // Xóa mã xác nhận sau khi xác nhận thành công
-            //    await _userRepository.UpdateUserAsync(user);
-            //    return true;
-            //}
-
-            return false;
+            var emailConfirmation = await _context.EmailConfirms.FirstOrDefaultAsync(ec => ec.Email == email
+                                                                        && ec.Code == confirmationCode
+                                                                        && ec.IsUsed == true
+                                                                        && ec.ExpiredAt > DateTime.UtcNow);
+            return emailConfirmation != null;
         }
+
+        public async Task<EmailConfirm> GetConfirmationAsync(string email, string confirmationCode)
+        {
+            // Giả sử bạn có ngữ cảnh DbContext là _context
+            return await _context.EmailConfirms
+                .FirstOrDefaultAsync(ec => ec.Email == email && ec.Code == confirmationCode);
+        }
+
+
+        public async Task UpdateConfirmationAsync(EmailConfirm emailConfirm)
+        {
+            _context.EmailConfirms.Update(emailConfirm);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

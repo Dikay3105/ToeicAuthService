@@ -63,6 +63,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 builder.Services.AddScoped<IEmailConfirmRepository, EmailConfirmRepository>();
+builder.Services.AddScoped<IResetPasswordRepository, ResetPasswordRepository>();
 builder.Services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

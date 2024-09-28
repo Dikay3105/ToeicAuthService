@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AuthService.Migrations
 {
     /// <inheritdoc />
-    public partial class dbInit : Migration
+    public partial class initDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,14 +21,19 @@ namespace AuthService.Migrations
                 name: "EmailConfirms",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Email = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Code = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ExpiredAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    ExpiredAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    IsUsed = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_EmailConfirms", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -75,6 +80,8 @@ namespace AuthService.Migrations
                     Username = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     PasswordHash = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    lastPasswordChange = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Salt = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -147,6 +154,31 @@ namespace AuthService.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "ResetPasswords",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    Token = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ExpirationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Used = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ResetPasswords", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ResetPasswords_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "UserRoles",
                 columns: table => new
                 {
@@ -194,12 +226,12 @@ namespace AuthService.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "UserID", "CreatedAt", "Email", "FirstName", "LastName", "PasswordHash", "Salt", "Username" },
+                columns: new[] { "UserID", "CreatedAt", "Email", "FirstName", "LastName", "PasswordHash", "Salt", "Username", "lastPasswordChange" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5040), "admin@example.com", "Admin", "User", "hashed_password_1", "salt1", "admin" },
-                    { 2, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5067), "john.doe@example.com", "John", "Doe", "hashed_password_2", "salt2", "john_doe" },
-                    { 3, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5069), "jane.smith@example.com", "Jane", "Smith", "hashed_password_3", "salt3", "jane_smith" }
+                    { 1, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1451), "admin@example.com", "Admin", "User", "hashed_password_1", "salt1", "admin", "none" },
+                    { 2, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1464), "john.doe@example.com", "John", "Doe", "hashed_password_2", "salt2", "john_doe", "none" },
+                    { 3, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1466), "jane.smith@example.com", "Jane", "Smith", "hashed_password_3", "salt3", "jane_smith", "none" }
                 });
 
             migrationBuilder.InsertData(
@@ -207,8 +239,8 @@ namespace AuthService.Migrations
                 columns: new[] { "Id", "ExpiredAt", "IsRevoked", "IsUsed", "IssuedAt", "JwtId", "Token", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("2bbfe5e3-9376-46ff-9bd3-dd2efe12e043"), new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5730), false, false, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5731), "test", "refresh_token_2", 2 },
-                    { new Guid("eba39714-c2f4-4ccd-a0c0-6b187233cd12"), new DateTime(2024, 10, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5714), false, false, new DateTime(2024, 9, 26, 14, 19, 9, 473, DateTimeKind.Local).AddTicks(5724), "test", "refresh_token_1", 1 }
+                    { new Guid("c9c235f6-693d-44be-a7b6-9ab238ef5c6a"), new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1661), false, false, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1667), "test", "refresh_token_1", 1 },
+                    { new Guid("fe0a6332-9d14-428a-98b6-49db7b0aae7b"), new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1670), false, false, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1671), "test", "refresh_token_2", 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -235,6 +267,11 @@ namespace AuthService.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_RefreshTokens_UserId",
                 table: "RefreshTokens",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ResetPasswords_UserId",
+                table: "ResetPasswords",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -266,6 +303,9 @@ namespace AuthService.Migrations
 
             migrationBuilder.DropTable(
                 name: "RefreshTokens");
+
+            migrationBuilder.DropTable(
+                name: "ResetPasswords");
 
             migrationBuilder.DropTable(
                 name: "RolePermissions");

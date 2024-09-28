@@ -3,54 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mã Đăng Nhập</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
         }
 
-        .container {
+        .email-container {
             max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
+            margin: 0 auto;
+            background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
         }
 
         .header {
             text-align: center;
-            padding: 10px 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        .verification-code {
-            font-size: 24px;
+            .header img {
+                max-width: 100px;
+            }
+
+        .code-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+            .code-section h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: #333333;
+            }
+
+        .code {
+            font-size: 36px;
             font-weight: bold;
-            color: #4CAF50;
+            color: #ff0000;
+            background-color: #f0f0f0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            letter-spacing: 5px;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 14px;
+            color: #555555;
             margin: 20px 0;
         }
 
         .footer {
             text-align: center;
-            margin-top: 20px;
+            padding: 20px;
             font-size: 12px;
-            color: #888;
+            color: #888888;
+            background-color: #f9f9f9;
         }
+
+            .footer a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .footer img {
+                max-width: 80px;
+                margin: 0 10px;
+            }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+            .social-icons img {
+                width: 32px;
+                margin: 0 5px;
+            }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="email-container">
+        <!-- Header -->
         <div class="header">
-            <h2>Xác thực địa chỉ email của bạn</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/League_of_Legends_icon.png" alt="Riot Games Logo">
         </div>
-        <p>Chào bạn,</p>
-        <p>Cảm ơn bạn đã đăng ký tài khoản! Để hoàn tất quá trình đăng ký, vui lòng nhập mã xác thực bên dưới:</p>
-        <div class="verification-code">{{VerificationCode}}</div>
-        <p>Mã này sẽ hết hạn trong 10 phút. Nếu bạn không thực hiện yêu cầu này, bạn có thể bỏ qua email này.</p>
+
+        <!-- Code Section -->
+        <div class="code-section">
+            <h1>Mã Đăng Nhập</h1>
+            <div class="code">{{VerificationCode}}</div>
+        </div>
+
+        <!-- Message -->
+        <div class="message">
+            Nếu bạn không phải là người gửi yêu cầu này, hãy đổi mật khẩu tài khoản ngay lập tức để tránh việc bị truy cập trái phép.
+            Đọc <a href="#">Bảo Mật Tài Khoản</a> để biết các mẹo về mật khẩu có tính bảo mật cao.
+        </div>
+
+        <!-- Footer -->
         <div class="footer">
-            <p>Trân trọng,<br>Đội ngũ hỗ trợ</p>
+            <p>Riot Games | VNG Games</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Facebook_icon.png" alt="Facebook"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Twitter_icon.png" alt="Twitter"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Youtube_icon.png" alt="YouTube"></a>
+            </div>
+            <p>CHÍNH SÁCH QUYỀN RIÊNG TƯ | HỖ TRỢ | ĐIỀU KHOẢN SỬ DỤNG</p>
+            <p>Tập Đoàn Riot Games, 12333 W Olympic Blvd, Los Angeles, CA 90064, Hoa Kỳ</p>
         </div>
     </div>
 </body>

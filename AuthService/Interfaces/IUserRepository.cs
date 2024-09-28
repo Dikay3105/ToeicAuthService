@@ -11,6 +11,7 @@ namespace AuthService.Interfaces
         bool AddUser(User newUser);
         bool UpdateUser(UpdateUserModel model);
         bool Save();
+        Task<User> GetUserByEmailAsync(string email);
 
     }
 }

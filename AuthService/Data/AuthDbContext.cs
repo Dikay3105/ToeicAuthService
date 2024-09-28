@@ -17,6 +17,7 @@ namespace AuthService.Data
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<EmailConfirm> EmailConfirms { get; set; }
+        public DbSet<ResetPassword> ResetPasswords { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasKey(u => u.UserID);
@@ -25,6 +26,8 @@ namespace AuthService.Data
             modelBuilder.Entity<RolePermission>().HasKey(rp => rp.RolePermissionID);
             modelBuilder.Entity<UserRole>().HasKey(ur => ur.UserRoleID);
             modelBuilder.Entity<RefreshToken>().HasKey(rf => rf.Id);
+            modelBuilder.Entity<EmailConfirm>().HasKey(ec => ec.Id);
+            modelBuilder.Entity<ResetPassword>().HasKey(rp => rp.Id);
 
             modelBuilder.Entity<RolePermission>()
                 .HasOne<Role>()
@@ -51,14 +54,12 @@ namespace AuthService.Data
                 .WithMany()
                 .HasForeignKey(rt => rt.UserId);
 
-            modelBuilder.Entity<EmailConfirm>()
-                .HasNoKey();
 
             // Seed data for Users
             modelBuilder.Entity<User>().HasData(
-                new User { UserID = 1, Username = "admin", PasswordHash = "hashed_password_1", Salt = "salt1", Email = "admin@example.com", FirstName = "Admin", LastName = "User", CreatedAt = DateTime.Now },
-                new User { UserID = 2, Username = "john_doe", PasswordHash = "hashed_password_2", Salt = "salt2", Email = "john.doe@example.com", FirstName = "John", LastName = "Doe", CreatedAt = DateTime.Now },
-                new User { UserID = 3, Username = "jane_smith", PasswordHash = "hashed_password_3", Salt = "salt3", Email = "jane.smith@example.com", FirstName = "Jane", LastName = "Smith", CreatedAt = DateTime.Now }
+                new User { UserID = 1, Username = "admin", PasswordHash = "hashed_password_1", lastPasswordChange = "none", Salt = "salt1", Email = "admin@example.com", FirstName = "Admin", LastName = "User", CreatedAt = DateTime.Now },
+                new User { UserID = 2, Username = "john_doe", PasswordHash = "hashed_password_2", lastPasswordChange = "none", Salt = "salt2", Email = "john.doe@example.com", FirstName = "John", LastName = "Doe", CreatedAt = DateTime.Now },
+                new User { UserID = 3, Username = "jane_smith", PasswordHash = "hashed_password_3", lastPasswordChange = "none", Salt = "salt3", Email = "jane.smith@example.com", FirstName = "Jane", LastName = "Smith", CreatedAt = DateTime.Now }
             );
 
             // Seed data for Roles

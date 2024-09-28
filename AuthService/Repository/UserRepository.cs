@@ -33,6 +33,13 @@ namespace AuthService.Repository
             return Save();
         }
 
+        //get user by email
+        public async Task<User> GetUserByEmailAsync(string email)
+        {
+            return await _context.Users
+                                 .FirstOrDefaultAsync(u => u.Email == email);
+        }
+
         public bool UpdateUser(UpdateUserModel model)
         {
             // Lấy thông tin người dùng dựa trên UserID
