@@ -59,6 +59,7 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("UserServiceConnection"),
     new MySqlServerVersion(new Version(8, 0, 21))));
 
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
@@ -86,9 +87,26 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Tự động thực hiện migration
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AuthDbContext>();
+        context.Database.Migrate(); // Thực hiện migration
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while migrating the database.");
+    }
+}
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseCors(allowSpecificOrigins);
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -96,7 +114,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseRouting();
 app.UseAuthentication();

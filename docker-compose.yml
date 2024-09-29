@@ -6,9 +6,12 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: toeic_user
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD: ""
     ports:
       - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
   authservice:
     image: ${DOCKER_REGISTRY-}authservice
     build:
@@ -17,7 +20,10 @@ services:
     depends_on:
       - db
     ports:
-      - "5555:80"
+      - "5555:80"  # Map host port 5555 to container port 80
+    environment:
+      ASPNETCORE_URLS: "http://*:80"  # Ensure this matches the port mapping
+      ConnectionStrings__DefaultConnection: "Server=db;Database=toeic_user;User=root;Password="
 
 volumes:
   mysql_data:
