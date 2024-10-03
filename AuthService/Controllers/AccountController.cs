@@ -49,7 +49,12 @@ namespace AuthService.Controllers
             var user = await _accountRepository.GetUserByUsernameAsync(model.Username);
             if (user == null)
             {
-                return Ok(new { EC = -1, EM = "Invalid Username" });
+                user = await _userRepository.GetUserByEmailAsync(model.Username);
+                if (user == null)
+                {
+                    return Ok(new { EC = -1, EM = "Invalid Username Or Email" });
+                }
+
             }
 
             // Check if the password matches using the salt
@@ -59,7 +64,12 @@ namespace AuthService.Controllers
             }
 
             var token = await GenerateToken(user);
-            return Ok(new { EC = 0, EM = "Login success", DT = token });
+            return Ok(new
+            {
+                EC = 0,
+                EM = "Login success",
+                DT = new { token, user } // Fixed: wrapped token and user in an object
+            });
         }
 
         [HttpPost("Logout")]
