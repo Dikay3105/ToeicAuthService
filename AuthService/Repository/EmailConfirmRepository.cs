@@ -17,9 +17,8 @@ namespace AuthService.Repository
             _context = context;
         }
 
-        public async Task<bool> SendEmailConfirmationCodeAsync(string email)
+        public async Task<bool> SendEmailConfirmationCodeAsync(string email, string code)
         {
-            var code = RNG.GenerateSixDigitNumber().ToString();
             if (await AddEmailConfirmCodeAsync(email, code))
             {
                 await SendMail.SendVerificationEmailAsync(email, code);

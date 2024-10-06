@@ -5,7 +5,7 @@ namespace AuthService.Interfaces
     public interface IEmailConfirmRepository
     {
         // Gửi mã xác nhận tới địa chỉ email của người dùng
-        Task<bool> SendEmailConfirmationCodeAsync(string email);
+        Task<bool> SendEmailConfirmationCodeAsync(string email, string code);
 
         //Lưu mã xác nhận vào DB
         Task<bool> AddEmailConfirmCodeAsync(string email, string confirmationCode);

@@ -92,6 +92,14 @@ namespace AuthService.Controllers
         [HttpPost("SignUp")]
         public async Task<IActionResult> SignUp([FromBody] SignUpModel model)
         {
+            // Kiểm tra xem model có hợp lệ không
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                               .Select(e => e.ErrorMessage);
+                return BadRequest(new { EC = -1, EM = errors });
+            }
+
             var (passwordHash, salt) = PasswordHasher.HashPassword(model.PasswordHash);
 
             var newUser = new User
@@ -109,7 +117,7 @@ namespace AuthService.Controllers
             var checkValidMail = ValidateCheck.IsValidEmail(newUser.Email);
             if (!checkValidMail)
             {
-                return StatusCode(422, new { EC = -1, EM = "Invalid email" });
+                return Ok(new { EC = -1, EM = "Invalid email" });
             }
 
             var checkUsername = _userRepository.GetUsers()
@@ -117,7 +125,7 @@ namespace AuthService.Controllers
 
             if (checkUsername != null)
             {
-                return StatusCode(422, new { EC = -1, EM = "Username already used" });
+                return Ok(new { EC = -1, EM = "Username already used" });
             }
 
             var checkEmail = _userRepository.GetUsers()
@@ -125,22 +133,18 @@ namespace AuthService.Controllers
 
             if (checkEmail != null)
             {
-                return StatusCode(422, new { EC = -1, EM = "Email already used" });
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
+                return Ok(new { EC = -1, EM = "Email already used" });
             }
 
             if (!_userRepository.AddUser(newUser))
             {
-                return StatusCode(422, new { EC = -1, EM = "Error saving user" });
+                return Ok(new { EC = -1, EM = "Error saving user" });
             }
 
             var token = await GenerateToken(newUser);
             return Ok(new { EC = 0, EM = "Sign up successful", DT = token });
         }
+
 
         // API đổi mật khẩu
         [HttpPost("ChangePassword")]
@@ -297,9 +301,33 @@ namespace AuthService.Controllers
         [HttpPost("SendConfirmEmailCode")]
         public async Task<IActionResult> SendConfirmEmailCode([FromBody] EmailModel model)
         {
+
+            if (!string.IsNullOrWhiteSpace(model.Username))
+            {
+                var checkUsername = _userRepository.GetUsers()
+                                .FirstOrDefault(u => u.Username.Trim().Equals(model.Username.Trim(), StringComparison.OrdinalIgnoreCase));
+
+                if (checkUsername != null)
+                {
+                    return Ok(new { EC = -1, EM = "Username used" });
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(model.Email))
+            {
+                var checkEmail = _userRepository.GetUsers()
+                                .FirstOrDefault(u => u.Email.Trim().Equals(model.Email.Trim(), StringComparison.OrdinalIgnoreCase));
+
+                if (checkEmail != null)
+                {
+                    return Ok(new { EC = -1, EM = "Email used" });
+                }
+            }
+
             try
             {
-                if (await _emailConfirmRepository.SendEmailConfirmationCodeAsync(model.Email))
+                var code = RNG.GenerateSixDigitNumber().ToString();
+                if (await _emailConfirmRepository.SendEmailConfirmationCodeAsync(model.Email, code))
                     return Ok(new { EC = 0, EM = "Confirmation code sent successfully" });
                 return Ok(new { EC = -1, EM = "Cannot sent code" });
             }
@@ -307,6 +335,34 @@ namespace AuthService.Controllers
             {
                 return StatusCode(500, new { EC = -1, EM = "Failed to send email", Details = ex.Message });
             }
+        }
+
+        [HttpPost("CheckAccountExist")]
+        public async Task<IActionResult> CheckAccountExist([FromBody] EmailModel model)
+        {
+            if (!string.IsNullOrWhiteSpace(model.Username))
+            {
+                var checkUsername = _userRepository.GetUsers()
+                                .FirstOrDefault(u => u.Username.Trim().Equals(model.Username.Trim(), StringComparison.OrdinalIgnoreCase));
+
+                if (checkUsername != null)
+                {
+                    return Ok(new { EC = 0, EM = "Account found" });
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(model.Email))
+            {
+                var checkEmail = _userRepository.GetUsers()
+                                .FirstOrDefault(u => u.Email.Trim().Equals(model.Email.Trim(), StringComparison.OrdinalIgnoreCase));
+
+                if (checkEmail != null)
+                {
+                    return Ok(new { EC = 0, EM = "Account found" });
+                }
+            }
+
+            return Ok(new { EC = -1, EM = "Account not found" });
         }
 
         [HttpPost("CheckConfirmEmailCode")]
@@ -404,6 +460,7 @@ namespace AuthService.Controllers
     public class EmailModel
     {
         public string Email { get; set; }
+        public string Username { get; set; }
     }
 
     public class CheckEmailCodeModel

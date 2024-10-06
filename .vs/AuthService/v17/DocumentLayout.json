@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\repository\\emailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\repository\\emailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\interfaces\\iemailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\interfaces\\iemailconfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\models\\signupmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\models\\signupmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,8 +34,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignUpModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Models\\SignUpModel.cs",
+              "RelativeDocumentMoniker": "AuthService\\Models\\SignUpModel.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Models\\SignUpModel.cs",
+              "RelativeToolTip": "AuthService\\Models\\SignUpModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T14:41:51.879Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,14 +56,40 @@
               "RelativeDocumentMoniker": "AuthService\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Controllers\\AccountController.cs",
               "RelativeToolTip": "AuthService\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAqwEcAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAGgBAAAAAAAAAAAAAEsBAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T14:16:51.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmailConfirmRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "RelativeToolTip": "AuthService\\Interfaces\\IEmailConfirmRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T15:16:50.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EmailConfirmRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Repository\\EmailConfirmRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Repository\\EmailConfirmRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Repository\\EmailConfirmRepository.cs",
+              "RelativeToolTip": "AuthService\\Repository\\EmailConfirmRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T15:16:58.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Program.cs",
               "RelativeDocumentMoniker": "AuthService\\Program.cs",
@@ -47,12 +97,11 @@
               "RelativeToolTip": "AuthService\\Program.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAAAE8AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T14:25:32.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-30T14:25:32.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Dockerfile",
               "RelativeDocumentMoniker": "AuthService\\Dockerfile",
