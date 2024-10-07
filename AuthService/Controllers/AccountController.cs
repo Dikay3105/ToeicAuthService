@@ -299,7 +299,7 @@ namespace AuthService.Controllers
         }
 
         [HttpPost("SendConfirmEmailCode")]
-        public async Task<IActionResult> SendConfirmEmailCode([FromBody] EmailModel model)
+        public async Task<IActionResult> SendConfirmEmailCode([FromBody] ConfirmEmailModel model)
         {
 
             if (!string.IsNullOrWhiteSpace(model.Username))
@@ -340,30 +340,22 @@ namespace AuthService.Controllers
         [HttpPost("CheckAccountExist")]
         public async Task<IActionResult> CheckAccountExist([FromBody] EmailModel model)
         {
-            if (!string.IsNullOrWhiteSpace(model.Username))
+            if (string.IsNullOrWhiteSpace(model.Email))
             {
-                var checkUsername = _userRepository.GetUsers()
-                                .FirstOrDefault(u => u.Username.Trim().Equals(model.Username.Trim(), StringComparison.OrdinalIgnoreCase));
-
-                if (checkUsername != null)
-                {
-                    return Ok(new { EC = 0, EM = "Account found" });
-                }
+                return Ok(new { EC = -1, EM = "Invalid email" });
             }
 
-            if (!string.IsNullOrWhiteSpace(model.Email))
-            {
-                var checkEmail = _userRepository.GetUsers()
-                                .FirstOrDefault(u => u.Email.Trim().Equals(model.Email.Trim(), StringComparison.OrdinalIgnoreCase));
+            var checkEmail = _userRepository.GetUsers()
+                            .FirstOrDefault(u => u.Email.Trim().Equals(model.Email.Trim(), StringComparison.OrdinalIgnoreCase));
 
-                if (checkEmail != null)
-                {
-                    return Ok(new { EC = 0, EM = "Account found" });
-                }
+            if (checkEmail != null)
+            {
+                return Ok(new { EC = 0, EM = "Account found", DT = checkEmail });
             }
 
             return Ok(new { EC = -1, EM = "Account not found" });
         }
+
 
         [HttpPost("CheckConfirmEmailCode")]
         public async Task<IActionResult> CheckConfirmEmailCode([FromBody] CheckEmailCodeModel model)
@@ -394,12 +386,12 @@ namespace AuthService.Controllers
 
         // API gửi mã xác nhận đổi mật khẩu tới email
         [HttpPost("SendResetCode")]
-        public async Task<IActionResult> SendResetToken([FromBody] string email)
+        public async Task<IActionResult> SendResetToken([FromBody] EmailModel model)
         {
-            var user = await _userRepository.GetUserByEmailAsync(email);
+            var user = await _userRepository.GetUserByEmailAsync(model.Email);
             if (user == null)
             {
-                return BadRequest(new { EC = -1, EM = "Email không tồn tại" });
+                return Ok(new { EC = -1, EM = "Email không tồn tại" });
             }
 
             // Tạo mã xác nhận mới
@@ -415,7 +407,7 @@ namespace AuthService.Controllers
             await _resetPasswordRepository.SaveResetTokenAsync(resetToken);
 
             // Gửi email (Giả sử `SendEmailAsync` là phương thức gửi email)
-            await SendMail.SendPasswordResetEmailAsync(email, resetToken.Token);
+            await SendMail.SendPasswordResetEmailAsync(model.Email, resetToken.Token);
 
             return Ok(new { EC = 0, EM = "Mã xác nhận đã được gửi qua email" });
         }
@@ -457,10 +449,15 @@ namespace AuthService.Controllers
 
 
     }
-    public class EmailModel
+    public class ConfirmEmailModel
     {
         public string Email { get; set; }
         public string Username { get; set; }
+    }
+
+    public class EmailModel
+    {
+        public string Email { get; set; }
     }
 
     public class CheckEmailCodeModel

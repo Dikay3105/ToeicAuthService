@@ -15,7 +15,7 @@ namespace AuthService.Helper
             string body = await File.ReadAllTextAsync(templatePath);
 
             // Thay thế placeholder trong HTML bằng mã xác thực
-            body = body.Replace("{VerificationCode}", verificationCode);
+            body = body.Replace("{{VerificationCode}}", verificationCode);
 
             await SendEmailAsync(toEmail, subject, body);
         }
@@ -30,7 +30,7 @@ namespace AuthService.Helper
             string body = await File.ReadAllTextAsync(templatePath);
 
             // Thay thế placeholder trong HTML bằng mã xác thực
-            body = body.Replace("{ResetPasswordCode}", ResetPasswordCode);
+            body = body.Replace("{{ResetPasswordCode}}", ResetPasswordCode);
 
             await SendEmailAsync(toEmail, subject, body);
         }
