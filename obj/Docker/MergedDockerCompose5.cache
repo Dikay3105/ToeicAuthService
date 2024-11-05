@@ -1,8 +1,8 @@
-name: dockercompose14399486180176250363
+name: dockercompose15706087697176955590
 services:
   authservice:
     build:
-      context: C:\Users\huhuh\source\repos\AuthService
+      context: C:\Users\PC\source\repos\AuthService
       dockerfile: AuthService/Dockerfile
       args:
         BUILD_CONFIGURATION: Debug
@@ -10,7 +10,7 @@ services:
       labels:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: AuthService
-      target: build
+      target: base
     container_name: AuthService
     depends_on:
       db:
@@ -27,7 +27,6 @@ services:
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
-      ASPNETCORE_URLS: http://*:80
       ConnectionStrings__DefaultConnection: Server=db;Database=toeic_user;User=root;Password=
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
       NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
@@ -41,8 +40,12 @@ services:
       default: null
     ports:
       - mode: ingress
-        target: 80
-        published: "5555"
+        target: 6666
+        published: "6666"
+        protocol: tcp
+      - mode: ingress
+        target: 6667
+        published: "6667"
         protocol: tcp
       - mode: ingress
         target: 8080
@@ -53,34 +56,34 @@ services:
     tty: true
     volumes:
       - type: bind
-        source: C:\Users\huhuh\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\PC\AppData\Roaming\Microsoft\UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\huhuh\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\PC\AppData\Roaming\ASP.NET\Https
         target: /home/app/.aspnet/https
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\huhuh\source\repos\AuthService\AuthService
+        source: C:\Users\PC\source\repos\AuthService\AuthService
         target: /app
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\huhuh\source\repos\AuthService
+        source: C:\Users\PC\source\repos\AuthService
         target: /src
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\huhuh\vsdbg\vs2017u5
+        source: C:\Users\PC\vsdbg\vs2017u5
         target: /remote_debugger
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\huhuh\.nuget\packages
+        source: C:\Users\PC\.nuget\packages
         target: /.nuget/packages
         read_only: true
         bind:
@@ -92,13 +95,13 @@ services:
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\huhuh\AppData\Roaming\ASP.NET\Https
+        source: C:\Users\PC\AppData\Roaming\ASP.NET\Https
         target: /root/.aspnet/https
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\huhuh\AppData\Roaming\Microsoft\UserSecrets
+        source: C:\Users\PC\AppData\Roaming\Microsoft\UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind:
@@ -135,7 +138,7 @@ services:
         volume: {}
 networks:
   default:
-    name: dockercompose14399486180176250363_default
+    name: dockercompose15706087697176955590_default
 volumes:
   mysql_data:
-    name: dockercompose14399486180176250363_mysql_data
+    name: dockercompose15706087697176955590_mysql_data
