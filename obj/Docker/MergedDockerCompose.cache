@@ -12,15 +12,14 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
-      ASPNETCORE_URLS: http://*:80
       ConnectionStrings__DefaultConnection: Server=db;Database=toeic_user;User=root;Password=
     image: authservice
     networks:
       default: null
     ports:
       - mode: ingress
-        target: 80
-        published: "5555"
+        target: 5002
+        published: "5002"
         protocol: tcp
       - mode: ingress
         target: 8080

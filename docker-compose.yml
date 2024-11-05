@@ -20,9 +20,9 @@ services:
     depends_on:
       - db
     ports:
-      - "5555:80"  # Map host port 5555 to container port 80
+      - "5556:81"  # Map host port 5555 to container port 80
     environment:
-      ASPNETCORE_URLS: "http://*:80"  # Ensure this matches the port mapping
+      ASPNETCORE_URLS: "https://*:81"  # Ensure this matches the port mapping
       ConnectionStrings__DefaultConnection: "Server=db;Database=toeic_user;User=root;Password="
 
 volumes:

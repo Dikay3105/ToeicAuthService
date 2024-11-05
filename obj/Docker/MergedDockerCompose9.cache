@@ -1,0 +1,67 @@
+name: dockercompose15706087697176955590
+services:
+  authservice:
+    build:
+      context: C:\Users\PC\source\repos\AuthService
+      dockerfile: AuthService/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_URLS: http://*:80
+      ConnectionStrings__DefaultConnection: Server=db;Database=toeic_user;User=root;Password=
+    image: authservice
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 81
+        published: "5555"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\PC\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\PC\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  db:
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: toeic_user
+      MYSQL_ROOT_PASSWORD: ""
+    image: mysql:8.0
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3306
+        published: "3307"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: mysql_data
+        target: /var/lib/mysql
+        volume: {}
+networks:
+  default:
+    name: dockercompose15706087697176955590_default
+volumes:
+  mysql_data:
+    name: dockercompose15706087697176955590_mysql_data
