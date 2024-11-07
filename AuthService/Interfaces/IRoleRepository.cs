@@ -4,10 +4,11 @@ namespace AuthService.Interfaces
 {
     public interface IRoleRepository
     {
-        ICollection<Role> GetRoles();
-        Task<Role> GetRoleById(int id);
-        bool DeleteRole(int id);
-        bool AddRole(Role newRole);
-        bool Save();
+        //ICollection<Role> GetRoles();
+        //Task<Role> GetRoleById(int id);
+        //bool DeleteRole(int id);
+        //bool AddRole(Role newRole);
+        //bool Save();
+        Task<List<Role>> GetRolesByUserId(int userId);
     }
 }

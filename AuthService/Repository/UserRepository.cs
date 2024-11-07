@@ -80,5 +80,6 @@ namespace AuthService.Repository
 
             return roles;
         }
+
     }
 }

@@ -1,18 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\AuthService\\",
+  "WorkspaceRootPath": "C:\\Users\\huhuh\\source\\repos\\AuthService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|c:\\users\\pc\\source\\repos\\authservice\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\repository\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\repository\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\interfaces\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\interfaces\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\huhuh\\source\\repos\\authservice\\authservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +46,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 857,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 11,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -51,41 +79,115 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\appsettings.json",
-              "RelativeDocumentMoniker": "AuthService\\appsettings.json",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\appsettings.json",
-              "RelativeToolTip": "AuthService\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-05T16:37:19.388Z",
+              "Title": "IRoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Interfaces\\IRoleRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Interfaces\\IRoleRepository.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Interfaces\\IRoleRepository.cs",
+              "RelativeToolTip": "AuthService\\Interfaces\\IRoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T09:27:17.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Dockerfile",
-              "RelativeDocumentMoniker": "AuthService\\Dockerfile",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Dockerfile",
-              "RelativeToolTip": "AuthService\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-05T16:20:40.084Z",
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Repository\\RoleRepository.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\RoleRepository.cs",
+              "RelativeToolTip": "AuthService\\Repository\\RoleRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T09:27:06.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Program.cs",
+              "RelativeDocumentMoniker": "AuthService\\Program.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Program.cs",
+              "RelativeToolTip": "AuthService\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwEMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T09:26:43.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "AuthService\\Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "AuthService\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T09:14:40.31Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\docker-compose.yml*",
-              "RelativeToolTip": "docker-compose.yml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-11-05T16:18:37.972Z",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "AuthService\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Controllers\\UserController.cs",
+              "RelativeToolTip": "AuthService\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAWwEgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T06:23:45.871Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Models\\UserRole.cs",
+              "RelativeDocumentMoniker": "AuthService\\Models\\UserRole.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Models\\UserRole.cs",
+              "RelativeToolTip": "AuthService\\Models\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T08:37:30.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "AuthService\\Repository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "AuthService\\Repository\\UserRepository.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAuwFEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T08:35:24.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Dto\\UserDto.cs",
+              "RelativeDocumentMoniker": "AuthService\\Dto\\UserDto.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Dto\\UserDto.cs",
+              "RelativeToolTip": "AuthService\\Dto\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T06:38:54.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Models\\User.cs",
+              "RelativeDocumentMoniker": "AuthService\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\huhuh\\source\\repos\\AuthService\\AuthService\\Models\\User.cs",
+              "RelativeToolTip": "AuthService\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T06:39:05.599Z"
             }
           ]
         },

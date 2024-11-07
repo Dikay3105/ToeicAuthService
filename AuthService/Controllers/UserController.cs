@@ -15,12 +15,14 @@ namespace AuthService.Controllers
         private readonly IUserRepository _userRepository;
         private readonly AuthDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IRoleRepository _roleRepository;
 
-        public UserController(IUserRepository userRepository, AuthDbContext context, IMapper mapper)
+        public UserController(IUserRepository userRepository, IRoleRepository roleRepository, AuthDbContext context, IMapper mapper)
         {
             _userRepository = userRepository;
             _context = context;
             _mapper = mapper;
+            _roleRepository = roleRepository;
         }
 
         // Get all users
@@ -66,6 +68,38 @@ namespace AuthService.Controllers
                 DT = userDto
             });
         }
+
+        // Get user by ID with role
+        [HttpGet("usernrole/{id}")]
+        [ProducesResponseType(typeof(UserDto), 200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<UserDto>> GetUserByIdWithRole(int id)
+        {
+            var user = await _userRepository.GetUserById(id);
+            if (user == null)
+            {
+                return NotFound(new
+                {
+                    EC = -1,  // Error Code
+                    EM = $"User with ID {id} not found"
+                });
+            }
+
+            var userDto = _mapper.Map<UserDto>(user);
+            var roles = await _roleRepository.GetRolesByUserId(id);
+
+            return Ok(new
+            {
+                EC = 0,  // Error Code
+                EM = "User found",
+                DT = new
+                {
+                    user = userDto, // Trả về thông tin người dùng
+                    roles = roles    // Trả về thông tin các role
+                }
+            });
+        }
+
 
 
         // Add new user
