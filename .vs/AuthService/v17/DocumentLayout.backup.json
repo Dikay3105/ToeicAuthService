@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\AuthService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\migrations\\20241111151934_initdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\migrations\\20241111151934_initdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|c:\\users\\pc\\source\\repos\\authservice\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\migrations\\20241111151934_initdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\migrations\\20241111151934_initdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\models\\emailconfirm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,6 +67,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Dockerfile",
+              "RelativeDocumentMoniker": "AuthService\\Dockerfile",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Dockerfile",
+              "RelativeToolTip": "AuthService\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-11T15:22:55.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "20241111151934_initDb.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Migrations\\20241111151934_initDb.cs",
               "RelativeDocumentMoniker": "AuthService\\Migrations\\20241111151934_initDb.cs",
@@ -75,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Program.cs",
               "RelativeDocumentMoniker": "AuthService\\Program.cs",
@@ -88,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EmailConfirm.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Models\\EmailConfirm.cs",
               "RelativeDocumentMoniker": "AuthService\\Models\\EmailConfirm.cs",
@@ -101,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "AuthService\\Controllers\\AccountController.cs",
@@ -114,13 +131,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\appsettings.json",
               "RelativeDocumentMoniker": "AuthService\\appsettings.json",
               "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\appsettings.json",
               "RelativeToolTip": "AuthService\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAACDAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-11-11T14:15:11.632Z",
               "EditorCaption": ""
@@ -133,7 +150,7 @@
               "RelativeDocumentMoniker": "docker-compose.yml",
               "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
               "WhenOpened": "2024-11-11T14:14:21.602Z",
               "EditorCaption": ""

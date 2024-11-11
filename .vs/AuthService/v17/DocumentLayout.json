@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\AuthService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|c:\\users\\pc\\source\\repos\\authservice\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|solutionrelative:authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|c:\\users\\pc\\source\\repos\\authservice\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{68B93A83-71DE-413F-A025-14DE3254D36C}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8BDFB6C5-7AB4-440F-9290-E43B0D05E399}|AuthService\\AuthService.csproj|c:\\users\\pc\\source\\repos\\authservice\\authservice\\migrations\\20241111151934_initdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 857,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\Dockerfile",
               "RelativeDocumentMoniker": "AuthService\\Dockerfile",
@@ -87,8 +87,7 @@
               "RelativeToolTip": "AuthService\\Migrations\\20241111151934_initDb.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:19:35.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T15:19:35.234Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "AuthService\\Program.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAnwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:17:27.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T15:17:27.433Z"
             },
             {
               "$type": "Document",
@@ -113,8 +111,7 @@
               "RelativeToolTip": "AuthService\\Models\\EmailConfirm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T15:16:43.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T15:16:43.073Z"
             },
             {
               "$type": "Document",
@@ -126,12 +123,11 @@
               "RelativeToolTip": "AuthService\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAHoAAAAAAAAAAAAIwJAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T14:38:30.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T14:38:30.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\AuthService\\appsettings.json",
               "RelativeDocumentMoniker": "AuthService\\appsettings.json",
@@ -139,18 +135,17 @@
               "RelativeToolTip": "AuthService\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-11T14:15:11.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T14:15:11.632Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AuthService\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
               "ToolTip": "C:\\Users\\PC\\source\\repos\\AuthService\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
               "WhenOpened": "2024-11-11T14:14:21.602Z",
               "EditorCaption": ""
