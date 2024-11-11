@@ -35,14 +35,14 @@ namespace AuthService.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("ExpiredAt")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<bool>("IsUsed")
                         .HasColumnType("tinyint(1)");
@@ -100,7 +100,7 @@ namespace AuthService.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<DateTime>("ExpiredAt")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<bool>("IsRevoked")
                         .HasColumnType("tinyint(1)");
@@ -109,7 +109,7 @@ namespace AuthService.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("IssuedAt")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("JwtId")
                         .IsRequired()
@@ -131,22 +131,22 @@ namespace AuthService.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c9c235f6-693d-44be-a7b6-9ab238ef5c6a"),
-                            ExpiredAt = new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1661),
+                            Id = new Guid("e14ea6e9-8e0e-4450-a841-978bfc46397d"),
+                            ExpiredAt = new DateTime(2024, 12, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9526),
                             IsRevoked = false,
                             IsUsed = false,
-                            IssuedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1667),
+                            IssuedAt = new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9533),
                             JwtId = "test",
                             Token = "refresh_token_1",
                             UserId = 1
                         },
                         new
                         {
-                            Id = new Guid("fe0a6332-9d14-428a-98b6-49db7b0aae7b"),
-                            ExpiredAt = new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1670),
+                            Id = new Guid("bed6b2d0-98c9-425e-a2f0-fef6bb496322"),
+                            ExpiredAt = new DateTime(2024, 12, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9538),
                             IsRevoked = false,
                             IsUsed = false,
-                            IssuedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1671),
+                            IssuedAt = new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9539),
                             JwtId = "test",
                             Token = "refresh_token_2",
                             UserId = 2
@@ -162,10 +162,10 @@ namespace AuthService.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Token")
                         .IsRequired()
@@ -278,7 +278,7 @@ namespace AuthService.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserID"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -316,7 +316,7 @@ namespace AuthService.Migrations
                         new
                         {
                             UserID = 1,
-                            CreatedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1451),
+                            CreatedAt = new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(8986),
                             Email = "admin@example.com",
                             FirstName = "Admin",
                             LastName = "User",
@@ -328,7 +328,7 @@ namespace AuthService.Migrations
                         new
                         {
                             UserID = 2,
-                            CreatedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1464),
+                            CreatedAt = new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9007),
                             Email = "john.doe@example.com",
                             FirstName = "John",
                             LastName = "Doe",
@@ -340,7 +340,7 @@ namespace AuthService.Migrations
                         new
                         {
                             UserID = 3,
-                            CreatedAt = new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1466),
+                            CreatedAt = new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9009),
                             Email = "jane.smith@example.com",
                             FirstName = "Jane",
                             LastName = "Smith",

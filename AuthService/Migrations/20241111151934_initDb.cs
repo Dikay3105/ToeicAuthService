@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AuthService.Migrations
 {
     /// <inheritdoc />
-    public partial class initDB : Migration
+    public partial class initDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,8 +27,8 @@ namespace AuthService.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Code = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ExpiredAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ExpiredAt = table.Column<DateTime>(type: "datetime", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false),
                     IsUsed = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
@@ -91,7 +91,7 @@ namespace AuthService.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     LastName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -138,8 +138,8 @@ namespace AuthService.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     IsUsed = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     IsRevoked = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    IssuedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ExpiredAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    IssuedAt = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ExpiredAt = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -162,8 +162,8 @@ namespace AuthService.Migrations
                     UserId = table.Column<int>(type: "int", nullable: false),
                     Token = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ExpirationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ExpirationDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false),
                     Used = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
@@ -229,9 +229,9 @@ namespace AuthService.Migrations
                 columns: new[] { "UserID", "CreatedAt", "Email", "FirstName", "LastName", "PasswordHash", "Salt", "Username", "lastPasswordChange" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1451), "admin@example.com", "Admin", "User", "hashed_password_1", "salt1", "admin", "none" },
-                    { 2, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1464), "john.doe@example.com", "John", "Doe", "hashed_password_2", "salt2", "john_doe", "none" },
-                    { 3, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1466), "jane.smith@example.com", "Jane", "Smith", "hashed_password_3", "salt3", "jane_smith", "none" }
+                    { 1, new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(8986), "admin@example.com", "Admin", "User", "hashed_password_1", "salt1", "admin", "none" },
+                    { 2, new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9007), "john.doe@example.com", "John", "Doe", "hashed_password_2", "salt2", "john_doe", "none" },
+                    { 3, new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9009), "jane.smith@example.com", "Jane", "Smith", "hashed_password_3", "salt3", "jane_smith", "none" }
                 });
 
             migrationBuilder.InsertData(
@@ -239,8 +239,8 @@ namespace AuthService.Migrations
                 columns: new[] { "Id", "ExpiredAt", "IsRevoked", "IsUsed", "IssuedAt", "JwtId", "Token", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("c9c235f6-693d-44be-a7b6-9ab238ef5c6a"), new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1661), false, false, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1667), "test", "refresh_token_1", 1 },
-                    { new Guid("fe0a6332-9d14-428a-98b6-49db7b0aae7b"), new DateTime(2024, 10, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1670), false, false, new DateTime(2024, 9, 27, 21, 59, 40, 312, DateTimeKind.Local).AddTicks(1671), "test", "refresh_token_2", 2 }
+                    { new Guid("bed6b2d0-98c9-425e-a2f0-fef6bb496322"), new DateTime(2024, 12, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9538), false, false, new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9539), "test", "refresh_token_2", 2 },
+                    { new Guid("e14ea6e9-8e0e-4450-a841-978bfc46397d"), new DateTime(2024, 12, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9526), false, false, new DateTime(2024, 11, 11, 22, 19, 34, 439, DateTimeKind.Local).AddTicks(9533), "test", "refresh_token_1", 1 }
                 });
 
             migrationBuilder.InsertData(

@@ -55,9 +55,13 @@ builder.Services.AddAuthentication(option =>
                     };
                 });
 
+//builder.Services.AddDbContext<AuthDbContext>(options =>
+//    options.UseMySql(builder.Configuration.GetConnectionString("UserServiceConnection"),
+//    new MySqlServerVersion(new Version(5, 0, 21))));
 builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("UserServiceConnection"),
-    new MySqlServerVersion(new Version(8, 0, 21))));
+    new MySqlServerVersion(new Version(5, 5, 62))));
+
 
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
