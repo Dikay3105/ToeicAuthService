@@ -1,29 +1,13 @@
 version: '3.8'
 
-services:
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_DATABASE: toeic_user
-      MYSQL_ROOT_PASSWORD: ""
-    ports:
-      - "3307:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-
+services:  
   authservice:
     image: ${DOCKER_REGISTRY-}authservice
     build:
       context: .
       dockerfile: AuthService/Dockerfile
-    depends_on:
-      - db
     ports:
-      - "5556:81"  # Map host port 5555 to container port 80
+      - "5556:81"  # Map host port 5556 to container port 81
     environment:
-      ASPNETCORE_URLS: "https://*:81"  # Ensure this matches the port mapping
-      ConnectionStrings__DefaultConnection: "Server=db;Database=toeic_user;User=root;Password="
-
-volumes:
-  mysql_data:
+      ASPNETCORE_URLS: "https://*:81"  # Đảm bảo trùng với port mapping
+      ConnectionStrings__DefaultConnection: "Server=sql300.infinityfree.com;Database=if0_37693544_toeic_user;User=if0_37693544;Password=v0xmJqQ3UH"
